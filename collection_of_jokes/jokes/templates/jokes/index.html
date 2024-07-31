@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Анекдоты</h1>
+<ul>
+    {% for joke in jokes %}
+    <li><a href="{% url 'jokes:detail' joke.id %}">{{ joke.text }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

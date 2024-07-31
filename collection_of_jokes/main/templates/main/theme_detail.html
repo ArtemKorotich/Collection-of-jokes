@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ theme.name }}</h1>
+<ul>
+    {% for content in contents %}
+        <li>
+            {% if content.content_type == 'joke' %}
+                {{ content.text }}
+            {% else %}
+                <img src="{{ content.image.url }}" alt="Image">
+            {% endif %}
+            <p>Рейтинг: {{ content.rating }}</p>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

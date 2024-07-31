@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ joke.text }}</h1>
+<p>Рейтинг: {{ joke.rating }}</p>
+<a href="{% url 'jokes:index' %}">Назад к списку анекдотов</a>
+{% endblock %}

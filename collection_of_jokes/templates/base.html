@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Сборник анекдотов</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'index' %}">Главная</a></li>
+            <li><a href="{% url 'theme_list' %}">Темы</a></li>
+            <li><a href="{% url 'favorite_list' %}">Избранное</a></li>
+            <li><a href="{% url 'user_jokes_list' %}">Все анекдоты</a></li>
+        </ul>
+    </nav>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

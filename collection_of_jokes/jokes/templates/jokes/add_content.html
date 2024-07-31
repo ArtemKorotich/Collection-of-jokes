@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Добавить контент</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="content_type">Тип контента:</label>
+    <select name="content_type" id="content_type">
+        <option value="joke">Анекдот</option>
+        <option value="image">Изображение</option>
+    </select>
+    <br>
+    <label for="theme">Тема:</label>
+    <select name="theme" id="theme">
+        {% for theme in themes %}
+            <option value="{{ theme.id }}">{{ theme.name }}</option>
+        {% endfor %}
+    </select>
+    <br>
+    <label for="text">Текст:</label>
+    <textarea name="text" id="text"></textarea>
+    <br>
+    <label for="image">Изображение:</label>
+    <input type="file" name="image" id="image">
+    <br>
+    <button type="submit">Добавить</button>
+</form>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Темы анекдотов</h1>
+<ul>
+    {% for theme in themes %}
+        <li><a href="{% url 'theme_detail' theme.id %}">{{ theme.name }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

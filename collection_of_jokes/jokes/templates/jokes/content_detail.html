@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Детали контента</h1>
+<div>
+    {% if content.content_type == 'joke' %}
+        <p>{{ content.text }}</p>
+    {% else %}
+        <img src="{{ content.image.url }}" alt="Image">
+    {% endif %}
+    <p>Рейтинг: {{ content.rating }}</p>
+</div>
+{% endblock %}
