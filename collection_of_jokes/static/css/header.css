@@ -1,0 +1,28 @@
+html, body {
+    font-family: Arial, sans-serif;
+    background-color: #e3fffb;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 10vh;
+}
+
+.header-container, .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #ffd0ea;
+    color: #fff;
+}
+
+.header-container .logo h1,
+.header-container .contact-info,
+.header-container .header-buttons {
+    margin: 0;
+}

@@ -1,25 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Content List</title>
-</head>
-<body>
-    <h1>Content List</h1>
-    <ul>
-        {% for content in contents %}
-            <li>
-                {% if content.content_type == 'joke' %}
-                    <p>{{ content.text }}</p>
-                {% elif content.content_type == 'image' %}
-                    <img src="{{ content.image.url }}" alt="Content Image">
-                {% endif %}
-                <p>Theme: {{ content.theme.name }}</p>
-                <p>Rating: {{ content.rating }}</p>
-                <a href="{% url 'jokes:detail' content.id %}">View Details</a>
-            </li>
-        {% endfor %}
-    </ul>
-    <a href="{% url 'jokes:add_content' %}">Add New Content</a>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Детали контента</h1>
+<div>
+    {% if content.content_type == 'joke' %}
+        <p>{{ content.text }}</p>
+    {% else %}
+        <img src="{{ content.image.url }}" alt="Image">
+    {% endif %}
+    <p>Рейтинг: {{ content.rating }}</p>
+</div>
+{% endblock %}
