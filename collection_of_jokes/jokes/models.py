@@ -19,7 +19,7 @@ class Content(models.Model):
     rating = models.IntegerField(default=0)
 
     def __str__(self):
-        return self.text if self.content_type == 'joke' else self.image.url
+        return (self.text and self.image.url) if self.content_type == 'joke' else self.image.url
 
 class Favorite(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)

@@ -1,7 +1,15 @@
-{% extends 'base.html' %}
-
-{% block content %}
-<h1>{{ joke.text }}</h1>
-<p>Рейтинг: {{ joke.rating }}</p>
-<a href="{% url 'jokes:index' %}">Назад к списку анекдотов</a>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Joke Detail</title>
+</head>
+<body>
+    <h1>Joke Detail</h1>
+    <p>{{ joke.text }}</p>
+    {% if joke.image %}
+        <img src="{{ joke.image.url }}" alt="Joke Image">
+    {% endif %}
+    <a href="{% url 'jokes:index' %}">Back to List</a>
+</body>
+</html>

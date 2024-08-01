@@ -1,10 +1,22 @@
-{% extends 'base.html' %}
-
-{% block content %}
-<h1>Анекдоты</h1>
-<ul>
-    {% for joke in jokes %}
-    <li><a href="{% url 'jokes:detail' joke.id %}">{{ joke.text }}</a></li>
-    {% endfor %}
-</ul>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jokes List</title>
+</head>
+<body>
+    <h1>Jokes List</h1>
+    <ul>
+        {% for joke in jokes %}
+            <li>
+                <p>{{ joke.text }}</p>
+                {% if joke.image %}
+                    <img src="{{ joke.image.url }}" alt="Joke Image">
+                {% endif %}
+                <a href="{% url 'jokes:detail' joke.id %}">View Details</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'jokes:add_content' %}">Add New Content</a>
+</body>
+</html>
