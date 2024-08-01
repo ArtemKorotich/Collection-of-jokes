@@ -19,8 +19,8 @@ html, body {
     padding: 1rem;
     background-color: #ffd0ea;
     color: #fff;
+    
 }
-
 .header-container .logo h1,
 .header-container .contact-info,
 .header-container .header-buttons {
